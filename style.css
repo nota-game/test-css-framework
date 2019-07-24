@@ -1,0 +1,279 @@
+:root {
+    --main-bg-color: #FAF0E6;
+    --light-bg-color: #f9f9f9;
+    --main-txt-color: #3e000c;
+    --primary-color: #d10000;
+    --primary-inverse-color: #FAF0E6;
+    --secondary-color: #7c0b2b;
+    --secondary-inverse-color: #FAF0E6;
+
+    --main-nav-height: 3em;
+}
+
+html {
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--main-bg-color);
+    color: var(--main-txt-color);
+}
+
+main {
+    margin: 0 1em;
+}
+
+main * {
+    max-width: 35rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+aside {
+    background: var(--secondary-color);
+    color: var(--secondary-inverse-color);
+    /* margin-right: calc(50% - (30rem + 35rem/2)); */
+
+    border-color: var(--primary-color);
+
+
+    margin-left: -1em;
+    margin-right: -1em;
+    margin-bottom: 1em;
+
+    display: block;
+    position: relative;
+    padding: 3em 3.5em .5em .7em;
+    overflow: hidden;
+    border-bottom-width: 2px;
+    border-top-width: 2px;
+    border-style: solid;
+    border-right-width: 0px;
+}
+
+/* aside table {
+    overflow-x: scroll;
+
+} */
+
+@media (min-width: 35rem) {
+    aside {
+        border-right-width: 2px;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 30.5em;
+    }
+
+}
+
+@media (min-width: 70rem) {
+
+    aside {
+        float: right;
+        width: 30rem;
+        border-right-width: 2px;
+        margin-left: 1em;
+    }
+
+    aside~aside {
+
+        /* display: block; */
+        clear: right;
+    }
+}
+
+@media (min-width: 105rem) {
+    aside {
+        margin-right: calc(50% - (35rem + 35rem/2));
+    }
+
+
+}
+
+
+nav.main li.seperator {
+    border-bottom: var(--secondary-color) 1px solid;
+}
+
+aside>:not(h1) {
+    margin: 0 0 1em;
+    -webkit-transform: translateX(2.5em) translateY(-2em);
+    -moz-transform: translateX(2.5em) translateY(-2em);
+    -ms-transform: translateX(2.5em) translateY(-2em);
+    -o-transform: translateX(2.5em) translateY(-2em);
+    transform: translateX(2.5em) translateY(-2em);
+}
+
+aside>*:last-child {
+    margin-bottom: -1.5em;
+}
+
+aside.notrans>*:last-child {
+    margin: 0 0 1em;
+}
+
+aside.notrans>:not(h1) {
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+    transform: none;
+}
+
+aside h1 {
+    font: 16px Georgia, Serif;
+    background: var(--primary-color);
+    color: var(--primary-inverse-color);
+    padding: .7em;
+    margin: 0;
+    line-height: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1000%;
+    overflow: visible;
+    -webkit-transform: rotate(90deg) translateX(20px);
+    -moz-transform: rotate(90deg) translateX(20px);
+    -ms-transform: rotate(90deg) translateX(20px);
+    -o-transform: rotate(90deg) translateX(20px);
+    transform: rotate(90deg) translateX(20px);
+    -webkit-transform-origin: 1.8em .5em;
+    -moz-transform-origin: 1.8em .5em;
+    -ms-transform-origin: 1.8em .5em;
+    -o-transform-origin: 1.8em .5em;
+    transform-origin: 1.8em .5em;
+}
+
+aside.notrans h1 {
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+    transform: none;
+}
+
+nav.outline>ul {
+    border: var(--secondary-color) solid 1px;
+    margin-top: var(--main-nav-height);
+    content: "asd";
+    color: #3e000c;
+    height: calc(100vh - var(--main-nav-height));
+    overflow-x: hidden;
+    overflow-y: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+
+    padding-right: 2em;
+    margin-right: 1em;
+}
+
+nav.outline {
+    display: none;
+    float: left;
+    position: sticky;
+    top: 0;
+    margin-bottom: 0px;
+    padding-right: 1em;
+}
+
+@media (min-width: 70rem) {
+    nav.outline {
+        display: unset;
+    }
+}
+
+nav.main {
+    margin: 0;
+    position: sticky;
+    top: 0;
+    z-index: 99999;
+}
+
+nav.main>ul {
+    background-color: var(--secondary-color);
+    color: var(--secondary-inverse-color);
+}
+
+nav.main ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+}
+
+nav.main>ul>li {
+    height: var(--main-nav-height);
+    overflow: hidden;
+    float: left;
+}
+
+/* Style The Dropdown Button */
+nav.main>ul>li>a {
+    display: table-cell;
+    color: var(--secondary-inverse-color);
+    text-align: center;
+    padding: 0px 16px;
+    /* padding: 14px 16px; */
+    /* margin-top: calc(var(--main-nav-height)/3); */
+    vertical-align: middle;
+    height: var(--main-nav-height);
+    text-decoration: none;
+}
+
+nav.main>ul>li>a:hover {
+    background-color: var(--primary-color);
+}
+
+nav.main>ul>li.dropdown {
+    height: unset;
+    max-height: unset;
+    /* overflow: auto; */
+}
+
+/* nav.main>ul>li>ul:has {
+    position: relative;
+    display: inline-block;
+} */
+
+
+/* The container <div> - needed to position the dropdown content */
+/* .dropdown {
+    position: relative;
+    display: inline-block;
+} */
+
+/* Dropdown Content (Hidden by Default) */
+nav.main>ul>li.dropdown>ul {
+    display: none;
+    position: absolute;
+    background-color: var(--light-bg-color);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+nav.main>ul>li.dropdown:hover>ul {
+    display: block;
+}
+
+/* Links inside the dropdown */
+nav.main>ul>li.dropdown>ul a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+nav.main>ul>li.dropdown>ul a:hover {
+    background-color: var(--primary-inverse-color);
+    color: var(--primary-color);
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}

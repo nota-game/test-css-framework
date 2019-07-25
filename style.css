@@ -7,10 +7,10 @@
     --secondary-color: #7c0b2b;
     --secondary-inverse-color: #FAF0E6;
 
-    --main-nav-height: 3em;
-    --box-side-header-thiknes: 3em;
-    --box-side-width: 25em;
-    --main-content-width: 35em;
+    --main-nav-height: 3rem;
+    --box-side-header-thiknes: 3rem;
+    --box-side-width: 25rem;
+    --main-content-width: 35rem;
 }
 
 html {

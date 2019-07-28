@@ -28,25 +28,6 @@
 
 }
 
-.scroll-table {
-    margin-top: 20px;
-    max-height: 200px;
-    overflow: auto;
-}
-
-.scroll-table table {
-    border-collapse: collapse;
-}
-
-.scroll-table tr:nth-child(even) {
-    background: var(--primary-color);
-    color: var(--primary-inverse-color);
-}
-
-.scroll-table>table>tr>th div {
-    position: absolute;
-    margin-top: -20px;
-}
 
 /* We use checkboxes to store states the user can toggle.*/
 input[type=checkbox],
@@ -73,10 +54,8 @@ main {
 }
 
 main>* {
-    max-width: var(--main-content-width);
+    width: var(--main-content-width);
     margin-left: calc(50vw - (var(--main-content-width) /2));
-    /* margin-left: auto; 
-     margin-right: auto; */
 }
 
 @media (max-width: 1670px) {
@@ -129,21 +108,89 @@ header>svg {
     max-height: 15em;
 }
 
+.pagination {
+    width: var(--main-content-width);
+    margin-left: calc(50vw - (var(--main-content-width) /2));
+}
+
+.pagination a {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: var(--secondary-inverse-color);
+    padding: 8px 32px;
+    margin: 12px 0px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 0px;
+    font-size: 16px;
+    border: var(--secondary-color) solid 1px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+.pagination a:hover {
+    border: var(--primary-color) solid 1px;
+
+}
+
+@media (max-width: 1670px) {
+    .pagination {
+        margin-left: calc((1670px / 2 - (var(--main-content-width) / 2)) - 3 * ((1670px / 2 - (var(--main-content-width) / 2)) - ((100vw / 1670) * (1670 / 2 - (560 /2)))));
+
+    }
+}
+
+@media(max-width: 1450px) {
+    .pagination {
+        margin-left: 335.7px;
+    }
+}
+
+@media (max-width: 1400px) {
+    .pagination {
+        margin-left: calc(50vw - (var(--main-content-width) + var(--box-side-header-thiknes) + var(--info-content-width) + 16px + 24px)/2);
+    }
+}
+
+@media (max-width: 1100px) {
+    .pagination {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .pagination {
+        width: unset;
+
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+
+
+}
 
 
 table {
+    clear: none;
     display: block;
     max-width: 100%;
+    
     overflow-x: auto;
     white-space: nowrap;
 }
 
-table>tbody>tr {
+table>tbody>tr:nth-child(even) {
     background-color: var(--secondary-color);
     color: var(--secondary-inverse-color);
 }
 
-table>tbody>tr:nth-child(even) {
+aside table>tbody>tr {
+    background-color: var(--secondary-color);
+    color: var(--secondary-inverse-color);
+}
+
+aside table>tbody>tr:nth-child(even) {
     background-color: var(--primary-color);
     color: var(--primary-inverse-color);
 }
@@ -238,7 +285,7 @@ aside {
 
     font-size: 1em;
 
-    margin-right: calc((50vw - var(--main-content-width) /2) - (var(--box-side-header-thiknes) + var(--info-content-width)) - 2.5em);
+    margin-right: calc((50vw - var(--main-content-width) /2) - (var(--box-side-header-thiknes) + var(--info-content-width)) - ( 16px + 16px +  24px));
     margin-bottom: 1em;
 
     display: block;
@@ -267,7 +314,7 @@ aside~aside {
 
 @media (max-width: 1670px) {
     aside {
-        margin-right: calc(1670px /2 - (var(--box-side-header-thiknes) + var(--info-content-width) + var(--main-content-width) /2) - + 16px + 24px);
+        margin-right: calc(1670px /2 - (var(--box-side-header-thiknes) + var(--info-content-width) + var(--main-content-width) /2) - ( 16px + 16px + 24px));
     }
 }
 
@@ -275,14 +322,14 @@ aside~aside {
     aside {
         /* margin-right: calc((100vw / 1450) * 67); */
         /* margin-left:335.7px; */
-        margin-right: calc(100vw - (335.7px + var(--main-content-width) + var(--box-side-header-thiknes) + var(--info-content-width) + 16px + 24px));
+        margin-right: calc(100vw - (335.7px + var(--main-content-width) + var(--box-side-header-thiknes) + var(--info-content-width) + 16px + 16px + 24px));
 
     }
 }
 
 @media (max-width: 1400px) {
     aside {
-        margin-right: calc(50vw - (var(--main-content-width) + var(--box-side-header-thiknes) + var(--info-content-width) + 16px + 24px)/2);
+        margin-right: calc(50vw - (var(--main-content-width) + var(--box-side-header-thiknes) + var(--info-content-width) + 16px + 24px +  24px)/2);
     }
 }
 
@@ -403,6 +450,8 @@ aside.notrans h1 {
     cursor: pointer;
     display: table-cell;
     vertical-align: middle;
+    transition-duration: 0.4s;
+
 }
 
 .menuSelector svg {
@@ -462,6 +511,7 @@ aside.notrans h1 {
         border-top: var(--secondary-color) 1px solid;
         padding-top: 1em;
         margin-top: 1em;
+
     }
 
     nav.main li li a {
@@ -539,6 +589,7 @@ aside.notrans h1 {
         vertical-align: middle;
         height: var(--main-nav-height);
         text-decoration: none;
+        transition-duration: 0.4s;
     }
 
     nav.main>ul>li>a:hover {
@@ -548,6 +599,7 @@ aside.notrans h1 {
     nav.main>ul>li.dropdown {
         height: unset;
         max-height: unset;
+
         /* overflow: auto; */
     }
 
@@ -583,6 +635,7 @@ aside.notrans h1 {
         padding: 12px 16px;
         text-decoration: none;
         display: block;
+        transition-duration: 0.4s;
     }
 
     /* Change color of dropdown links on hover */

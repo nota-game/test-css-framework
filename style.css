@@ -111,9 +111,10 @@ header>svg {
 .pagination {
     width: var(--main-content-width);
     margin-left: calc(50vw - (var(--main-content-width) /2));
+    text-align: center;
 }
 
-.pagination a {
+a.button {
     display: inline-block;
     background-color: var(--secondary-color);
     color: var(--secondary-inverse-color);
@@ -123,14 +124,26 @@ header>svg {
     text-decoration: none;
     border-radius: 0px;
     font-size: 16px;
-    border: var(--secondary-color) solid 1px;
+    border: var(--secondary-color) solid 3px;
     cursor: pointer;
     transition-duration: 0.4s;
 }
 
-.pagination a:hover {
-    border: var(--primary-color) solid 1px;
+a.button:hover:not(.disabled) {
+    border: var(--primary-color) solid 3px;
+}
+a.disabled{
+    filter: grayscale(85%) brightness(280%);
+}
 
+@media (prefers-color-scheme: dark) {
+    a.button {
+        border-width: 1px;
+    }
+
+    a.button:hover {
+        border-width: 1px;
+    }
 }
 
 @media (max-width: 1670px) {
@@ -169,7 +182,7 @@ header>svg {
 }
 
 @media (max-width: 370px) {
-    .pagination>a:nth-of-type(2){
+    .pagination>a:nth-of-type(2) {
         display: none;
     }
 }
@@ -179,7 +192,7 @@ table {
     clear: none;
     display: block;
     max-width: 100%;
-    
+
     overflow-x: auto;
     white-space: nowrap;
 }
@@ -289,7 +302,7 @@ aside {
 
     font-size: 1em;
 
-    margin-right: calc((50vw - var(--main-content-width) /2) - (var(--box-side-header-thiknes) + var(--info-content-width)) - ( 16px + 16px +  24px));
+    margin-right: calc((50vw - var(--main-content-width) /2) - (var(--box-side-header-thiknes) + var(--info-content-width)) - (16px + 16px + 24px));
     margin-bottom: 1em;
 
     display: block;
@@ -318,7 +331,7 @@ aside~aside {
 
 @media (max-width: 1670px) {
     aside {
-        margin-right: calc(1670px /2 - (var(--box-side-header-thiknes) + var(--info-content-width) + var(--main-content-width) /2) - ( 16px + 16px + 24px));
+        margin-right: calc(1670px /2 - (var(--box-side-header-thiknes) + var(--info-content-width) + var(--main-content-width) /2) - (16px + 16px + 24px));
     }
 }
 
@@ -333,7 +346,7 @@ aside~aside {
 
 @media (max-width: 1400px) {
     aside {
-        margin-right: calc(50vw - (var(--main-content-width) + var(--box-side-header-thiknes) + var(--info-content-width) + 16px + 24px +  24px)/2);
+        margin-right: calc(50vw - (var(--main-content-width) + var(--box-side-header-thiknes) + var(--info-content-width) + 16px + 24px + 24px)/2);
     }
 }
 

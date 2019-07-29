@@ -528,7 +528,7 @@ aside.notrans h1 {
         padding-left: 2em;
         border-top: var(--secondary-color) 1px solid;
         padding-top: 1em;
-        margin-top: 1em;
+        /* margin-top: 1em; */
         display: block;
         transition-duration: 0.4s;
     }

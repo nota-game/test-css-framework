@@ -132,7 +132,8 @@ a.button {
 a.button:hover:not(.disabled) {
     border: var(--primary-color) solid 3px;
 }
-a.disabled{
+
+a.disabled {
     filter: grayscale(85%) brightness(280%);
 }
 
@@ -510,7 +511,7 @@ aside.notrans h1 {
         background-color: var(--main-bg-color);
         z-index: 999999;
         top: var(--main-nav-height);
-        width: 100vw;
+        width: 100%;
         height: calc(100vh - var(--main-nav-height));
     }
 
@@ -523,32 +524,54 @@ aside.notrans h1 {
     }
 
     nav.main li {
+        /* width: 100%; */
         padding-left: 2em;
-        width: 100%;
         border-top: var(--secondary-color) 1px solid;
         padding-top: 1em;
         margin-top: 1em;
+        display: block;
+        transition-duration: 0.4s;
+    }
 
+    nav.main li:not(.dropdown):not(.seperator) {
+        padding-bottom: 1em;
+        cursor: pointer;
+
+    }
+
+    nav.main li:hover {
+        background-color: var(--primary-color);
     }
 
     nav.main li li a {
-        color: var(--primary-color);
+        color: var(--secondary-color);
+    }
 
+    nav.main li li:hover a {
+        color: var(--primary-color);
     }
 
     nav.main li li {
-        color: var(--primary-color);
+        color: var(--secondary-color);
         margin: 0px;
+        background-color: var(--light-bg-color);
         margin-left: -2em;
+    }
+
+    nav.main li li:hover:not(.seperator) {
         background-color: var(--light-bg-color);
     }
 
+    nav.main li li:first-child {
+        margin-top: 1em;
+    }
+
+
+
     nav.main li.seperator {
-        width: 100%;
-        margin-left: -2em;
         padding: 0px;
         height: 0.25em;
-        /* background-color: var(--secondary-color); */
+        background-color: var(--secondary-color);
     }
 
     nav.main li.seperator+li {

@@ -166,8 +166,12 @@ header>svg {
         margin-left: 8px;
         margin-right: 8px;
     }
+}
 
-
+@media (max-width: 370px) {
+    .pagination>a:nth-of-type(2){
+        display: none;
+    }
 }
 
 
@@ -200,7 +204,7 @@ footer {
     height: var(--footer-height);
     background-color: var(--secondary-color);
     z-index: 999999;
-
+    clear: both;
 }
 
 
